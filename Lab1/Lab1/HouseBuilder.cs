@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
-    class HouseBuilder : IBuilder<House>
+    /// <summary>
+    /// Class HouseBuilder which can build house.
+    /// </summary>
+    public class HouseBuilder : IBuilder<House>
     {
+        /// <summary>
+        /// Builds house.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="House"/>
+        /// </returns>
         public House Build()
         {
             return new House();

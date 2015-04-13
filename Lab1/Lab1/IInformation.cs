@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
-    interface IInformation<in T>
+    /// <summary>
+    /// The Information interface.
+    /// </summary>
+    /// <typeparam name="T">
+    /// must have a base class House
+    /// </typeparam>
+    public interface IInformation<in T>
         where T : House, new()
     {
+        /// <summary>
+        /// Shows the information about house.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         void ShowInformation(T obj);
     }
 }

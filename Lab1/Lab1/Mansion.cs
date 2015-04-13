@@ -1,23 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
-    class Mansion : House
+    using System;
+    using System.Text;
+
+    /// <summary>
+    /// Class Mantion, which represent some mansion.
+    /// </summary>
+    public class Mansion : House
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Mansion"/> class.
+        /// </summary>
         public Mansion()
             : base()
         {
             Random rand = new Random();
-            this.NumberOfFloors = rand.Next() % 10 + 1;
+            this.NumberOfFloors = (rand.Next() % 10) + 1;
         }
 
+        /// <summary>
+        /// Gets or sets the number of floors.
+        /// </summary>
+        /// <value>
+        /// The number of floors.
+        /// </value>
         public int NumberOfFloors { get; set; }
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();

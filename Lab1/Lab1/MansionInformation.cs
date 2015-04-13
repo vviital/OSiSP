@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
-    class MansionInformation : IInformation<Mansion>
+    using System;
+
+    /// <summary>
+    /// Class MansionInformation, which can show information about mansion.
+    /// </summary>
+    public class MansionInformation : IInformation<Mansion>
     {
+        /// <summary>
+        /// Shows the information about mansion.
+        /// </summary>
+        /// <param name="obj">The mansion.</param>
         public void ShowInformation(Mansion obj)
         {
             string info = obj.ToString();

@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
+    using System;
 
-    class Program
+    /// <summary>
+    /// Program.
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Mains the specified arguments.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
             IBuilder<House> houseBuilder = new HouseBuilder();
             IBuilder<Mansion> mansionBuilder = new MansionBuilder();
             try
             {
-                houseBuilder = (IBuilder<House>) mansionBuilder;
+                houseBuilder = (IBuilder<House>)mansionBuilder;
                 Console.WriteLine("Covariant interface IBuilder<T>");
             }
             catch (Exception exception)
@@ -27,7 +29,7 @@ namespace Lab1
             mansionBuilder = new MansionBuilder();
             try
             {
-                mansionBuilder = (IBuilder<Mansion>) houseBuilder;
+                mansionBuilder = (IBuilder<Mansion>)houseBuilder;
                 Console.WriteLine("Contravariant interface IBuilder<T>");
             }
             catch (Exception exception)
@@ -40,7 +42,7 @@ namespace Lab1
 
             try
             {
-                houseInformation = (IInformation<House>) mansionInformation;
+                houseInformation = (IInformation<House>)mansionInformation;
                 Console.WriteLine("Covariant interface IInformation<T>");
             }
             catch (Exception exception)
@@ -53,7 +55,7 @@ namespace Lab1
 
             try
             {
-                mansionInformation = (IInformation<Mansion>) houseInformation;
+                mansionInformation = (IInformation<Mansion>)houseInformation;
                 Console.WriteLine("Contravariant interface IInformation<T>");
             }
             catch (Exception exception)

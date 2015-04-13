@@ -1,14 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1
+﻿namespace Lab1
 {
-    interface IBuilder<out T>
+    /// <summary>
+    /// The Builder interface.
+    /// </summary>
+    /// <typeparam name="T">
+    /// must have a base class House
+    /// </typeparam>
+    public interface IBuilder<out T>
         where T : House, new()
     {
+        /// <summary>
+        /// Builds house.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="T"/>
+        /// </returns>
         T Build();
     }
 }
