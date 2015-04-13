@@ -1,0 +1,7 @@
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\bin\Debug\GenericTypeLab1Tests.dll
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\bin\Debug\GenericTypeLab1Tests.pdb
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\bin\Debug\Lab1.exe
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\bin\Debug\Lab1.pdb
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\obj\Debug\GenericTypeLab1Tests.csprojResolveAssemblyReference.cache
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\obj\Debug\GenericTypeLab1Tests.dll
+D:\Программирование\GitHub\OSiSP\Lab1\GenericTypeLab1Tests\obj\Debug\GenericTypeLab1Tests.pdb

@@ -1,6 +1,5 @@
 D:\Программирование\GitHub\OSiSP\Lab1\Lab1\bin\Debug\Lab1.exe.config
 D:\Программирование\GitHub\OSiSP\Lab1\Lab1\bin\Debug\Lab1.exe
 D:\Программирование\GitHub\OSiSP\Lab1\Lab1\bin\Debug\Lab1.pdb
-D:\Программирование\GitHub\OSiSP\Lab1\Lab1\obj\Debug\Lab1.csprojResolveAssemblyReference.cache
 D:\Программирование\GitHub\OSiSP\Lab1\Lab1\obj\Debug\Lab1.exe
 D:\Программирование\GitHub\OSiSP\Lab1\Lab1\obj\Debug\Lab1.pdb
