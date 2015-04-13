@@ -44,9 +44,12 @@
   <ItemGroup>
     <Compile Include="House.cs" />
     <Compile Include="HouseBuilder.cs" />
+    <Compile Include="HouseInformation.cs" />
     <Compile Include="IBuilder.cs" />
+    <Compile Include="IInformation.cs" />
     <Compile Include="Mansion.cs" />
     <Compile Include="MansionBuilder.cs" />
+    <Compile Include="MansionInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
