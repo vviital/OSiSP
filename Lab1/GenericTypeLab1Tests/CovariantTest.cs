@@ -1,13 +1,18 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace GenericTypeLab1Tests
-{
+﻿namespace GenericTypeLab1Tests
+{   
+    using System;
     using Lab1;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// The unit test covariance.
+    /// </summary>
     [TestClass]
     public class CovariantTest
     {
+        /// <summary>
+        /// Tests the method1.
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {
@@ -18,7 +23,7 @@ namespace GenericTypeLab1Tests
 
             try
             {
-                houseBuilder = (IBuilder<House>) mansionBuilder;
+                houseBuilder = (IBuilder<House>)mansionBuilder;
             }
             catch (Exception exception)
             {

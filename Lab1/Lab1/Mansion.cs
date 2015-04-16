@@ -4,7 +4,7 @@
     using System.Text;
 
     /// <summary>
-    /// Class Mantion, which represent some mansion.
+    /// Class Mansion, which represent some mansion.
     /// </summary>
     public class Mansion : House
     {

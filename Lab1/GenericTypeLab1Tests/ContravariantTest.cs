@@ -1,4 +1,3 @@
-﻿using System;
 using System.Net.Configuration;
 using Lab1;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
