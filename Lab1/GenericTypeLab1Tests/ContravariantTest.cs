@@ -1,12 +1,18 @@
-using System.Net.Configuration;
-using Lab1;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace GenericTypeLab1Tests
+﻿namespace GenericTypeLab1Tests
 {
+    using System;
+    using Lab1;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    /// <summary>
+    /// The unit test contravariance.
+    /// </summary>
     [TestClass]
     public class ContravariantTest
     {
+        /// <summary>
+        /// Tests the method1.
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {
