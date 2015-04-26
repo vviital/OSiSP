@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    class Program
+    interface ICalculate
     {
-        static void Main(string[] args)
-        {
 
-        }
     }
 }
