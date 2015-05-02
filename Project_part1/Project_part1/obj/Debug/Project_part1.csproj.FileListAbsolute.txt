@@ -1,0 +1,6 @@
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\bin\Debug\Project_part1.exe.config
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\obj\Debug\Project_part1.csprojResolveAssemblyReference.cache
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\bin\Debug\Project_part1.exe
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\bin\Debug\Project_part1.pdb
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\obj\Debug\Project_part1.exe
+D:\Программирование\GitHub\OSiSP\Project_part1\Project_part1\obj\Debug\Project_part1.pdb
