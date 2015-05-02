@@ -1,1 +1,6 @@
 D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\bin\Debug\Lab2.exe.config
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\bin\Debug\Lab2.exe
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\bin\Debug\Lab2.pdb
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\obj\Debug\Lab2.csprojResolveAssemblyReference.cache
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\obj\Debug\Lab2.exe
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\Lab2\obj\Debug\Lab2.pdb

@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab2
+﻿namespace Lab2
 {
-    interface ICalculate
+    /// <summary>
+    /// Interface ICalculate with one method.
+    /// </summary>
+    [Alias(AlternativeName = "ICalc")]
+    public interface ICalculate
     {
-
+        /// <summary>
+        /// Calculates this instance.
+        /// </summary>
+        /// <returns>
+        /// Integer value
+        /// </returns>
+        int Calculate();
     }
 }
