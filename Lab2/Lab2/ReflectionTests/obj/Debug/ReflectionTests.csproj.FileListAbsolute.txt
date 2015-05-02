@@ -1,0 +1,7 @@
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\bin\Debug\ReflectionTests.dll
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\bin\Debug\ReflectionTests.pdb
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\bin\Debug\Lab2.exe
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\bin\Debug\Lab2.pdb
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\obj\Debug\ReflectionTests.csprojResolveAssemblyReference.cache
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\obj\Debug\ReflectionTests.dll
+D:\Программирование\GitHub\OSiSP\Lab2\Lab2\ReflectionTests\obj\Debug\ReflectionTests.pdb
