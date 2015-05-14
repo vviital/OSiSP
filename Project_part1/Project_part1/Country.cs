@@ -8,18 +8,20 @@ namespace Project_part1
 {
     class Country
     {
-        protected string _countryCode;
-
-        protected string _country;
 
         public Country()
         {
             
         }
 
-        public Country(string countCode, string country)
+        public Country(string countrycode, string country)
         {
-            
+            this.CountryCode = countrycode;
+            this.CountryName = country;
         }
+
+        public string CountryCode { get; set; }
+
+        public string CountryName { get; set; }
     }
 }
