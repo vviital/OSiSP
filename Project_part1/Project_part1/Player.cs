@@ -2,6 +2,13 @@
 {
     using System.Collections.Generic;
 
+    enum Sex : short
+    {
+        Male, 
+        Female,
+        Unknown
+    }
+
     /// <summary>
     /// Class Player.
     /// </summary>
@@ -25,15 +32,20 @@
         /// <summary>
         /// The friends
         /// </summary>
-        protected List<Friend> _friends;
- 
+        protected List<Player> _friends;
+
+        /// <summary>
+        /// The _sex
+        /// </summary>
+        protected Sex _sex;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Player"/> class.
         /// </summary>
         public Player()
             : base()
         {
-            this.Friends = new List<Friend>();
+            this.Friends = new List<Player>();
         }
 
         /// <summary>
@@ -48,14 +60,15 @@
         /// <param name="verifyFlag">if set to <c>true</c> [verify flag].</param>
         /// <param name="passport">The passport.</param>
         /// <param name="accountBalance">The account balance.</param>
-        public Player(string login, string password, string surname, string firstName, string phoneNumber, string email,
+        public Player(string login, string password, string surname, string firstName, Sex sex, string phoneNumber, string email,
             bool verifyFlag, PassportInformation passport, double accountBalance)
             : base(login, password, surname, firstName, phoneNumber, email)
         {
             this.VerifyFlag = verifyFlag;
             this.Passport = passport;
             this.AccountBalance = accountBalance;
-            this.Friends = new List<Friend>();
+            this.Friends = new List<Player>();
+            this.Gender = sex;
         }
 
         /// <summary>
@@ -71,14 +84,28 @@
         /// <param name="passport">The passport.</param>
         /// <param name="accountBalance">The account balance.</param>
         /// <param name="friends">The friends.</param>
-        public Player(string login, string password, string surname, string firstName, string phoneNumber, string email,
-           bool verifyFlag, PassportInformation passport, double accountBalance, List<Friend> friends)
+        public Player(string login, string password, string surname, string firstName, Sex sex, string phoneNumber, string email,
+           bool verifyFlag, PassportInformation passport, double
+            accountBalance, List<Player> friends)
             : base(login, password, surname, firstName, phoneNumber, email)
         {
             this.VerifyFlag = verifyFlag;
             this.Passport = passport;
             this.AccountBalance = accountBalance;
             this.Friends = friends;
+            this.Gender = sex;
+        }
+
+        /// <summary>
+        /// Gets or sets the gender.
+        /// </summary>
+        /// <value>
+        /// The gender.
+        /// </value>
+        public Sex Gender
+        {
+            get { return this._sex; }
+            set { this._sex = value; }
         }
 
         /// <summary>
@@ -123,7 +150,7 @@
         /// <value>
         /// The friends.
         /// </value>
-        public List<Friend> Friends
+        public List<Player> Friends
         {
             get { return this._friends; }
             set { this._friends = value; }

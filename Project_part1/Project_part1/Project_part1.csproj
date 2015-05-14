@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
-    <Compile Include="Friend.cs" />
+    <Compile Include="Country.cs" />
     <Compile Include="GameType.cs" />
     <Compile Include="PassportInformation.cs" />
     <Compile Include="Person.cs" />
