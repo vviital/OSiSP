@@ -22,7 +22,7 @@ namespace Zaneuski.Casino.Model
 
         public virtual PassportInformation Passport { get; set; }
 
-        public virtual List<PlayerResult> PlayerResults { get; set; } 
+        public virtual List<PlayerResult> PlayerResults { get; set; }
 
         public Player()
         {

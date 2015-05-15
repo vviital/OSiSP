@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class TournamentRestriction
+    class TournamentRestriction : BaseUnit
     {
         public string TypeCode { get; set; }
 
@@ -18,7 +18,7 @@ namespace Zaneuski.Casino.Model
 
         public TournamentRestriction()
         {
-            
+
         }
 
         public TournamentRestriction(string typeCode, int minimumNumberOfWins, int maximumNumberOfWins, Money fee)

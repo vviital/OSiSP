@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70AF4221-F712-405E-B88E-945FCE58B52C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{5E30E357-18F5-42F8-A6EC-A03DB380E475}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Zaneuski.Casino.Model</RootNamespace>
     <AssemblyName>Zaneuski.Casino.Model</AssemblyName>
@@ -13,7 +13,6 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="BaseUnit.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="GameType.cs" />
     <Compile Include="Money.cs" />
@@ -49,16 +48,12 @@
     <Compile Include="Person.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerResult.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round.cs" />
     <Compile Include="RoundResult.cs" />
     <Compile Include="Tournament.cs" />
     <Compile Include="TournamentRestriction.cs" />
     <Compile Include="TournamentResult.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

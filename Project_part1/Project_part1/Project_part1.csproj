@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="PassportInformation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

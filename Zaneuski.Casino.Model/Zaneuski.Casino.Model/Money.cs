@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class Money
+    class Money : BaseUnit
     {
         public double Value { get; set; }
 
         public Money()
         {
-            
+
         }
 
         public Money(double value)

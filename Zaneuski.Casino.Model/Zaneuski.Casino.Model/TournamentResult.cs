@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class TournamentResult
+    class TournamentResult : BaseUnit
     {
         public virtual Tournament Tournament { get; set; }
 
@@ -16,7 +16,7 @@ namespace Zaneuski.Casino.Model
 
         public TournamentResult()
         {
-            
+
         }
 
         public TournamentResult(Tournament tournament, Player participant, Money gainMoney)

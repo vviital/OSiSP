@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class Person
+    class Person : BaseUnit
     {
         public string Login { get; set; }
 
