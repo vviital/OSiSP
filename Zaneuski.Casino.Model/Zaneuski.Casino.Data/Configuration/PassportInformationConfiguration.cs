@@ -12,7 +12,13 @@ namespace Zaneuski.Casino.Data.Configuration
     {
         public PassportInformationConfiguration()
         {
-            
+            HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Passport ID");
+
+            Property(o => o.Nationality).IsRequired().HasMaxLength(50);
+
+            Property(o => o.PassportNumber).IsRequired().HasMaxLength(50);
+
+            Property(o => o.ExpirationDate).IsRequired();
         }
     }
 }

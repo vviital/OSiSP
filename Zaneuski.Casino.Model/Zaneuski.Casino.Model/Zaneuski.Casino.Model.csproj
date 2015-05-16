@@ -46,25 +46,24 @@
     <Compile Include="PassportInformation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IAdministratorRepository.cs" />
     <Compile Include="Repository\ICountryRepository.cs" />
     <Compile Include="Repository\IGameTypeRepository.cs" />
     <Compile Include="Repository\IPassportInformationRepository.cs" />
     <Compile Include="Repository\IPlayerRepository.cs" />
-    <Compile Include="Repository\IPlayerResultRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IRoundRepository.cs" />
     <Compile Include="Repository\IRoundResultRepository.cs" />
     <Compile Include="Repository\ITournamentRepository.cs" />
     <Compile Include="Repository\ITournamentRestrictionRepository.cs" />
-    <Compile Include="Repository\ITournamentResultRepository.cs" />
     <Compile Include="Round.cs" />
     <Compile Include="RoundResult.cs" />
     <Compile Include="Tournament.cs" />
     <Compile Include="TournamentRestriction.cs" />
-    <Compile Include="TournamentResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

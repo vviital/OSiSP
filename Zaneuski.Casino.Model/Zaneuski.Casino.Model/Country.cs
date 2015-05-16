@@ -14,14 +14,15 @@ namespace Zaneuski.Casino.Model
 
         }
 
-        public Country(string countrycode, string country)
+        public Country(string country)
         {
-            this.CountryCode = countrycode;
             this.CountryName = country;
         }
 
-        public string CountryCode { get; set; }
-
         public string CountryName { get; set; }
+
+        public virtual List<Player> Players { get; set; }
+
+        public virtual List<Administrator> Administrators { get; set; } 
     }
 }

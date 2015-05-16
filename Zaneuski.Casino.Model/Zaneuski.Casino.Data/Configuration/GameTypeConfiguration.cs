@@ -12,7 +12,11 @@ namespace Zaneuski.Casino.Data.Configuration
     {
         public GameTypeConfiguration()
         {
-            
+            HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Game type ID");
+
+            Property(o => o.Type).IsRequired().HasMaxLength(50);
+
+            HasMany(o => o.Tournaments).WithRequired(s => s.GameType);
         }
     }
 }

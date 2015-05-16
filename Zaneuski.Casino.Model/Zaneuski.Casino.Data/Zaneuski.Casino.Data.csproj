@@ -52,21 +52,27 @@
     <Compile Include="Configuration\GameTypeConfiguration.cs" />
     <Compile Include="Configuration\PassportInformationConfiguration.cs" />
     <Compile Include="Configuration\PlayerConfiguration.cs" />
-    <Compile Include="Configuration\PlayerResultConfiguration.cs" />
     <Compile Include="Configuration\RoundConfiguration.cs" />
     <Compile Include="Configuration\RoundResultConfiguration.cs" />
     <Compile Include="Configuration\TournamentConfiguration.cs" />
     <Compile Include="Configuration\TournamentRestrictionConfiguration.cs" />
-    <Compile Include="Configuration\TournamentResultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AdministratorRepository.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\CountryRepository.cs" />
+    <Compile Include="Repository\GameTypeRepository.cs" />
+    <Compile Include="Repository\PassportInformationRepository.cs" />
+    <Compile Include="Repository\PlayerRepository.cs" />
+    <Compile Include="Repository\RoundRepository.cs" />
+    <Compile Include="Repository\RoundResultRepository.cs" />
+    <Compile Include="Repository\TournamentRepository.cs" />
+    <Compile Include="Repository\TournamentRestrictionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Zaneuski.Casino.Model\Zaneuski.Casino.Model.csproj">
       <Project>{5e30e357-18f5-42f8-a6ec-a03db380e475}</Project>

@@ -12,7 +12,9 @@ namespace Zaneuski.Casino.Data.Configuration
     {
         public RoundResultConfiguration()
         {
-            
+            HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Round result ID");
+
+            Property(o => o.Gain).IsRequired();
         }
     }
 }

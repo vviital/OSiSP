@@ -22,7 +22,7 @@ namespace Zaneuski.Casino.Model
 
         public DateTime Birth { get; set; }
 
-        public Country HomeCountry { get; set; }
+        public virtual Country Country { get; set; }
 
         public Person()
         {
@@ -39,6 +39,7 @@ namespace Zaneuski.Casino.Model
             this.Sex = sex;
             this.Email = email;
             this.Birth = birth;
+            this.Country = homeCountry;
         }
     }
 }

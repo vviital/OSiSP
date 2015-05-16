@@ -12,7 +12,13 @@ namespace Zaneuski.Casino.Data.Configuration
     {
         public TournamentRestrictionConfiguration()
         {
-            
+            HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Tournament restriction ID");
+
+            HasMany(o => o.Tournaments).WithRequired(s => s.Restriction);
+
+            Property(o => o.Fee).IsRequired();
+
+            Property(o => o.MinimumNumberOfWins).IsRequired();
         }
     }
 }

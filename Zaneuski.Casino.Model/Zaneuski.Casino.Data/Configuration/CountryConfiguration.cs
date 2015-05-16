@@ -12,7 +12,13 @@ namespace Zaneuski.Casino.Data.Configuration
     {
         public CountryConfiguration()
         {
-            
+            HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Country code");
+
+            HasMany(o => o.Players).WithRequired(s => s.Country);
+
+            HasMany(o => o.Administrators).WithRequired(s => s.Country);
+
+            Property(o => o.CountryName).IsRequired().HasMaxLength(50);
         }
     }
 }

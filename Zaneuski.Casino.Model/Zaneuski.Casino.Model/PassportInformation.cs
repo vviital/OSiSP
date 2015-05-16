@@ -14,6 +14,8 @@ namespace Zaneuski.Casino.Model
 
         public DateTime ExpirationDate { get; set; }
 
+        public virtual Player Player { get; set; }
+
         public PassportInformation()
         {
 

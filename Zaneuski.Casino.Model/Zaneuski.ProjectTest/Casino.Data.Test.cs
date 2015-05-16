@@ -9,6 +9,7 @@ namespace Zaneuski.ProjectTest
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
