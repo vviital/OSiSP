@@ -8,18 +8,11 @@ namespace Zaneuski.Casino.Model
 {
     public class Round : BaseUnit
     {
-        public virtual List<Player> Participants { get; set; }
-
         public int RoomNumber { get; set; }
 
         public virtual List<RoundResult> RoundResults { get; set; }
 
         public virtual Tournament Tournament { get; set; }
-
-        public int NumberOfPlayer
-        {
-            get { return this.RoundResults.Count; }
-        }
 
         public Round()
         {

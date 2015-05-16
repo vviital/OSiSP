@@ -23,11 +23,6 @@ namespace Zaneuski.Casino.Model
 
         public List<Round> Rounds { get; set; }
 
-        public int NumberOfPerticipants
-        {
-            get { return this.Participants.Count; }
-        }
-
         public Tournament()
         {
 
