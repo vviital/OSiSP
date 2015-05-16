@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class RoundResult : BaseUnit
+    public class RoundResult : BaseUnit
     {
         public virtual Round TournamentRoom { get; set; }
 
         public virtual Player Participant { get; set; }
 
-        public Money Gain { get; set; }
+        public double Gain { get; set; }
 
         public RoundResult()
         {
 
         }
 
-        public RoundResult(Round tournamentRoom, Player participant, Money gainMoney)
+        public RoundResult(Round tournamentRoom, Player participant, double gainMoney)
         {
             this.TournamentRoom = tournamentRoom;
             this.Participant = participant;

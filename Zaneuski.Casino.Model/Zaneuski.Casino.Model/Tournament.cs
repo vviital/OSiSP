@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class Tournament : BaseUnit
+    public class Tournament : BaseUnit
     {
         public virtual GameType GameType { get; set; }
 

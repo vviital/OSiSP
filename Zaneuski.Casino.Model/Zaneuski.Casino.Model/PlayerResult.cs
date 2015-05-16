@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class PlayerResult : BaseUnit
+    public class PlayerResult : BaseUnit
     {
         public virtual Player Player { get; set; }
 
-        public Money GainMoney { get; set; }
+        public double GainMoney { get; set; }
 
         public virtual GameType GameType { get; set; }
 
@@ -23,7 +23,7 @@ namespace Zaneuski.Casino.Model
 
         }
 
-        public PlayerResult(Player player, Money gainMoney, GameType gameType, int numberOfWins, int numberOfGames)
+        public PlayerResult(Player player, double gainMoney, GameType gameType, int numberOfWins, int numberOfGames)
         {
             this.Player = player;
             this.GainMoney = gainMoney;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class Administrator : Person
+    public class Administrator : Person
     {
         public virtual List<Player> ObservedPlayers { get; set; }
 

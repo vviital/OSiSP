@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class GameType : BaseUnit
+    public class GameType : BaseUnit
     {
         public string GameTypeCode { get; set; }
 

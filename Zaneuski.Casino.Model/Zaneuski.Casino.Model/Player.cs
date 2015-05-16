@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class Player : Person
+    public class Player : Person
     {
         public string PhoneNumber { get; set; }
 
-        public Money AccountBalance { get; set; }
+        public double AccountBalance { get; set; }
 
         public bool VerifyFlag { get; set; }
 
@@ -34,13 +34,13 @@ namespace Zaneuski.Casino.Model
             : base(login, password, surname, firstname, sex, email, birth, country)
         {
             this.PhoneNumber = phoneNumber;
-            this.AccountBalance = new Money(0);
+            this.AccountBalance = 0;
             this.VerifyFlag = false;
             this.Passport = passport;
         }
 
         public Player(string login, string password, string surname, string firstname, bool sex, string email,
-            DateTime birth, Country country, string phoneNumber, PassportInformation passport, Money accountBalance, bool verifyFlag)
+            DateTime birth, Country country, string phoneNumber, PassportInformation passport, double accountBalance, bool verifyFlag)
             : base(login, password, surname, firstname, sex, email, birth, country)
         {
             this.PhoneNumber = phoneNumber;

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CasinoContext.cs" />
+    <Compile Include="Configuration\AdministratorConfiguration.cs" />
+    <Compile Include="Configuration\CountryConfiguration.cs" />
+    <Compile Include="Configuration\GameTypeConfiguration.cs" />
+    <Compile Include="Configuration\PassportInformationConfiguration.cs" />
+    <Compile Include="Configuration\PlayerConfiguration.cs" />
+    <Compile Include="Configuration\PlayerResultConfiguration.cs" />
+    <Compile Include="Configuration\RoundConfiguration.cs" />
+    <Compile Include="Configuration\RoundResultConfiguration.cs" />
+    <Compile Include="Configuration\TournamentConfiguration.cs" />
+    <Compile Include="Configuration\TournamentRestrictionConfiguration.cs" />
+    <Compile Include="Configuration\TournamentResultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,8 +65,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configuration\" />
     <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zaneuski.Casino.Model\Zaneuski.Casino.Model.csproj">
+      <Project>{5e30e357-18f5-42f8-a6ec-a03db380e475}</Project>
+      <Name>Zaneuski.Casino.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    class PassportInformation : BaseUnit
+    public class PassportInformation : BaseUnit
     {
         public string PassportNumber { get; set; }
 
