@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Net.Mime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Zaneuski.Casino.Data;
@@ -14,203 +15,99 @@ namespace Zaneuski.ProjectTest
         [TestMethod]
         public void MakeBaseTest()
         {
-            //using (var context = new CasinoContext())
+            var admin = new Administrator()
             {
-                #region Country
-                var country1 = new Country() {CountryName = "Belarus"};
-                var country2 = new Country() {CountryName = "Russia"};
-                #endregion
+                Login = "Admin", Password = "Admin", FirstName = "Vitali", Surname = "Zaneuski",
+                Email = "vviital@tut.by", Sex = true, Birth = new DateTime(1994, 12, 26)
+            };
 
-                #region Admin
-                var administrator = new Administrator()
-                {
-                    Login = "Admin",
-                    Password = "Admin",
-                    Birth = new DateTime(1994, 12, 26),
-                    FirstName = "Vitali",
-                    Surname = "Zaneuski",
-                    Email = "vviital@tut.by",
-                    Country = country1,
-                    Sex = true
-                };
-                #endregion
+            var player1 = new Player()
+            {
+                Login = "p1", Password = "123", FirstName = "f1", Surname = "s1", 
+                Email = "p1@mail.ru", Admin = admin, PhoneNumber = "1234556", Sex = true, VerifyFlag = false,
+                Birth = new DateTime(1994, 1, 1), AccountBalance = 42
+            };
+            var player2 = new Player()
+            {
+                Login = "p2", Password = "123", FirstName = "f2", Surname = "s2",
+                Email = "p2@mail.ru", Admin = admin, PhoneNumber = "12340000", Sex = true, VerifyFlag = true,
+                Birth = new DateTime(1994, 1, 1), AccountBalance = 42
+            };
 
-                #region PassportInformation
-                var passport1 = new PassportInformation()
-                {
-                    ExpirationDate = new DateTime(2020, 2, 2),
-                    Nationality = "Russian",
-                    PassportNumber = "KH1234345"
-                };
+            var tournament = new Tournament()
+            {
+                Admin = admin, Schedule = new DateTime(2015, 5, 30), TournamentName = "Poker tournament"
+            };
 
-                var passport2 = new PassportInformation()
-                {
-                    ExpirationDate = new DateTime(2020, 2, 2),
-                    Nationality = "Belarus",
-                    PassportNumber = "KH2334433"
-                };
-                #endregion
+            var round = new Round() {Tournament = tournament, RoomNumber = 1};
 
-                #region Users
-                var user1 = new Player()
-                {
-                    Login = "Alex",
-                    Password = "Alex_1994",
-                    Birth = new DateTime(1994, 2, 11),
-                    FirstName = "Alex",
-                    Surname = "Kuznechov",
-                    Email = "alex_kuznechov&@mail.ru",
-                    Country = country2,
-                    Sex = true,
-                    Admin = administrator,
-                    Passport = passport1,
-                    VerifyFlag = false,
-                    PhoneNumber = "+37533-0000-00-00",
-                    AccountBalance = 42
-                };
+            var roundResult1 = new RoundResult() {Gain = 24, Participant = player1, TournamentRoom = round};
+            var roundResult2 = new RoundResult() {Gain = 33, Participant = player2, TournamentRoom = round};
 
-                var user2 = new Player()
-                {
-                    Login = "Unknown",
-                    Password = "Hidfhf",
-                    Birth = new DateTime(1994, 2, 11),
-                    FirstName = "Unknown person",
-                    Surname = "Unknown person",
-                    Email = "unknown@mail.ru",
-                    Country = country1,
-                    Sex = false,
-                    VerifyFlag = true,
-                    Admin = administrator,
-                    AccountBalance = 21,
-                    PhoneNumber = "+37533-0000-00-01",
-                    Passport = passport2
-                };
+            var country1 = new Country() {CountryName = "Belarus"};
+            var country2 = new Country() {CountryName = "Russia"};
 
-                #endregion
+            var tournamentRestriction = new TournamentRestriction() {Fee = 5, MinimumNumberOfWins = 0};
 
-                #region LinkPassportUser
-                passport1.Player = user1;
-                passport2.Player = user2;
-                #endregion
+            var passport1 = new PassportInformation() { ExpirationDate = new DateTime(2020, 1, 1), Player = player1, Nationality = "Belarus", PassportNumber = "KH12344546"};
+            var passport2 = new PassportInformation() { ExpirationDate = new DateTime(2020, 1, 1), Player = player2, Nationality = "Belarus", PassportNumber = "KH45456233"};
 
-                #region MakeFriend
-                user1.haveFriends.Add(user2);
-                user2.isFriends.Add(user1);
-                user2.haveFriends.Add(user1);
-                user1.isFriends.Add(user2);
-                #endregion
+            var gameType = new GameType() { Type = "Texas hold 'em" };
 
-                #region ObservedPlayers
-                administrator.ObservedPlayers.Add(user1);
-                administrator.ObservedPlayers.Add(user2);
-                #endregion
+            admin.ObservedPlayers.Add(player1);
+            admin.ObservedPlayers.Add(player2);
+            admin.Country = country1;
+            admin.SupervisedTournaments.Add(tournament);
 
-                #region LinkCountry
-                country1.Administrators.Add(administrator);
-                country1.Players.Add(user1);
-                country2.Players.Add(user2);
-                #endregion
+            player1.Passport = passport1;
+            player1.RoundResults.Add(roundResult1);
+            player1.Tournaments.Add(tournament);
+            player1.haveFriends.Add(player2);
+            player1.isFriends.Add(player2);
+            player1.Country = country1;
 
-                #region GameType
-                var gametype = new GameType()
-                {
-                    Type = "Texas hold'em"
-                };
-                #endregion
+            player2.Passport = passport2;
+            player2.RoundResults.Add(roundResult2);
+            player2.Tournaments.Add(tournament);
+            player2.haveFriends.Add(player1);
+            player2.isFriends.Add(player1);
+            player2.Country = country2;
 
-                #region Restriction
-                var restriction = new TournamentRestriction()
-                {
-                    MinimumNumberOfWins = 0,
-                    MaximumNumberOfWins = 1000,
-                    Fee = 5
-                };
-                #endregion
+            tournament.Participants.Add(player1);
+            tournament.Participants.Add(player2);
+            tournament.Restriction = tournamentRestriction;
+            tournament.Rounds.Add(round);
+            tournament.GameType = gameType;
 
-                #region Tournament
-                var tournament1 = new Tournament()
-                {
-                    GameType = gametype,
-                    Schedule = new DateTime(2015, 5, 22),
-                    Admin = administrator,
-                    Restriction = restriction,
-                    TournamentName = "Texas hold'em tournament"
-                };
-                #endregion
+            round.RoundResults.Add(roundResult1);
+            round.RoundResults.Add(roundResult2);
 
-                #region LinkTournamentAndAdmin
-                administrator.SupervisedTournaments.Add(tournament1);
-                #endregion
+            country1.Players.Add(player1);
+            country1.Administrators.Add(admin);
 
-                #region LinkTorunamentAndGameType
-                gametype.Tournaments.Add(tournament1);
-                #endregion
+            country2.Players.Add(player2);
 
-                #region LinkRestriction
-                restriction.Tournaments.Add(tournament1);
-                #endregion
+            tournamentRestriction.Tournaments.Add(tournament);
 
-                #region LinkParticipantsAndTournament
-                tournament1.Participants.Add(user1);
-                tournament1.Participants.Add(user2);
+            gameType.Tournaments.Add(tournament);
 
-                user1.Tournaments.Add(tournament1);
-                user2.Tournaments.Add(tournament1);
-                #endregion
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Player> players = new PlayerRepository(context);
+                BaseRepository<Administrator> admins = new AdministratorRepository(context);
+                BaseRepository<Tournament> tournaments = new TournamentRepository(context);
+                BaseRepository<TournamentRestriction> tRestrictions = new TournamentRestrictionRepository(context);
+                BaseRepository<Round> rounds = new RoundRepository(context);
+                BaseRepository<RoundResult> rResults = new RoundResultRepository(context);
+                BaseRepository<GameType> gTypes = new GameTypeRepository(context);
+                BaseRepository<Country> countries = new CountryRepository(context);
+                BaseRepository<PassportInformation> passports = new PassportInformationRepository(context);
 
-                #region Round
-                var round = new Round()
-                {
-                    Tournament = tournament1,
-                    RoomNumber = 1
-                };
-                #endregion
+                admins.Add(admin);
+                players.Add(player1);
 
-                #region LinkTournamentAndRound
-                tournament1.Rounds.Add(round);
-                #endregion
-
-                #region RoundResult
-                var roundResult1 = new RoundResult()
-                {
-                    Gain = 2,
-                    TournamentRoom = round,
-                    Participant = user1
-                };
-
-                var roundResult2 = new RoundResult()
-                {
-                    Gain = 3,
-                    TournamentRoom = round,
-                    Participant = user2
-                };
-
-                user1.RoundResults.Add(roundResult1);
-                user2.RoundResults.Add(roundResult2);
-                round.RoundResults.Add(roundResult1);
-                round.RoundResults.Add(roundResult2);
-
-                #endregion
-
-                using (var context = new CasinoContext())
-                {
-                    BaseRepository<Player> players = new PlayerRepository(context);
-                    BaseRepository<Administrator> admin = new AdministratorRepository(context);
-                    BaseRepository<Tournament> tournament = new TournamentRepository(context);
-                    BaseRepository<TournamentRestriction> tRestriction = new TournamentRestrictionRepository(context);
-                    BaseRepository<Round> rounds = new RoundRepository(context);
-                    BaseRepository<RoundResult> rResults = new RoundResultRepository(context);
-                    BaseRepository<GameType> gType = new GameTypeRepository(context);
-                    BaseRepository<Country> country = new CountryRepository(context);
-                    BaseRepository<PassportInformation> passports = new PassportInformationRepository(context);
-
-                    country.Add(country1);
-                   // players.Add(user1);
-
-                    int num = 0;
-                    num++;
-                    players.Save();
-                }
+                int num = 0;
+                num++;
             }
         }
     }

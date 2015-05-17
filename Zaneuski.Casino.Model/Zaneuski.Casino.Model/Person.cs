@@ -22,15 +22,13 @@ namespace Zaneuski.Casino.Model
 
         public DateTime Birth { get; set; }
 
-        public virtual Country Country { get; set; }
-
         public Person()
         {
 
         }
 
         public Person(string login, string password, string surname, string firstname, bool sex, string email,
-            DateTime birth, Country homeCountry)
+            DateTime birth)
         {
             this.Login = login;
             this.Password = password;
@@ -39,7 +37,6 @@ namespace Zaneuski.Casino.Model
             this.Sex = sex;
             this.Email = email;
             this.Birth = birth;
-            this.Country = homeCountry;
         }
     }
 }

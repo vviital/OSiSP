@@ -26,6 +26,8 @@ namespace Zaneuski.Casino.Model
 
         public virtual List<RoundResult> RoundResults { get; set; }
 
+        public virtual Country Country { get; set; }
+
         public Player()
         {
             Initialize();
@@ -33,32 +35,34 @@ namespace Zaneuski.Casino.Model
 
         public Player(string login, string password, string surname, string firstname, bool sex, string email,
             DateTime birth, Country country, string phoneNumber, PassportInformation passport)
-            : base(login, password, surname, firstname, sex, email, birth, country)
+            : base(login, password, surname, firstname, sex, email, birth)
         {
             Initialize();
             this.PhoneNumber = phoneNumber;
             this.AccountBalance = 0;
             this.VerifyFlag = false;
             this.Passport = passport;
+            this.Country = country;
         }
 
         public Player(string login, string password, string surname, string firstname, bool sex, string email,
             DateTime birth, Country country, string phoneNumber, PassportInformation passport, double accountBalance, bool verifyFlag)
-            : base(login, password, surname, firstname, sex, email, birth, country)
+            : base(login, password, surname, firstname, sex, email, birth)
         {
             Initialize();
             this.PhoneNumber = phoneNumber;
             this.AccountBalance = accountBalance;
             this.VerifyFlag = verifyFlag;
             this.Passport = passport;
+            this.Country = country;
         }
 
         public void Initialize()
         {
             this.isFriends = new List<Player>();
             this.haveFriends = new List<Player>();
-            isFriends.Add(this);
-            haveFriends.Add(this);
+            //isFriends.Add(this);
+            //haveFriends.Add(this);
             this.Tournaments = new List<Tournament>();
             this.RoundResults = new List<RoundResult>();
         }
