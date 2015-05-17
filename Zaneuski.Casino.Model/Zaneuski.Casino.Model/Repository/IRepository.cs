@@ -9,16 +9,29 @@ namespace Zaneuski.Casino.Model.Repository
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        TEntity Add(TEntity entity);
+        List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        string includeProperties = "");
 
-        TEntity Get(int id);
+        void Add(TEntity entity);
 
-        TEntity Update(TEntity entity);
+        void Update(TEntity entity);
 
-        TEntity Delete(TEntity entity);
+        void Delete(TEntity entity);
 
-        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter);
+        void Delete(Expression<Func<TEntity, bool>> where);
 
-        int Count(Expression<Func<TEntity, bool>> filted);
+        TEntity GetById(int id);
+
+        IEnumerable<TEntity> GetAll();
+
+        IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where);
+
+        TEntity Get(Expression<Func<TEntity, bool>> where);
+
+        int Count(Expression<Func<TEntity, bool>> where = null);
+
+        bool IsExist(Expression<Func<TEntity, bool>> where = null);
+
+        void Save();
     }
 }

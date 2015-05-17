@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -12,41 +14,114 @@ namespace Zaneuski.Casino.Data.Repository
     public abstract class BaseRepository<TEntity> : IRepository<TEntity>
         where TEntity : BaseUnit
     {
-        protected readonly CasinoContext CasinoContext;
+        protected CasinoContext casinoContext;
+
+        protected DbSet<TEntity> DbSet
+        {
+            get { return casinoContext.Set<TEntity>(); }
+        }
 
         public BaseRepository(CasinoContext context)
         {
-            this.CasinoContext = context;
+            casinoContext = context;
+        } 
+
+        public virtual List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
+        {
+            IQueryable<TEntity> query = DbSet;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+            return query.ToList();
         }
 
-        public TEntity Add(TEntity entity)
+        public virtual void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            DbSet.Add(entity);
         }
 
-        public TEntity Get(int id)
+
+        // look this method
+        public virtual void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            DbSet.Attach(entity);
+            casinoContext.Entry(entity).State = EntityState.Modified;
         }
 
-        public TEntity Update(TEntity entity)
+        public virtual void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            DbSet.Remove(entity);
         }
 
-        public TEntity Delete(TEntity entity)
+        public virtual void Delete(Expression<Func<TEntity, bool>> where)
         {
-            throw new NotImplementedException();
+            IEnumerable<TEntity> objects = DbSet.Where<TEntity>(where).AsEnumerable();
+            foreach (var entity in objects)
+            {
+                DbSet.Remove(entity);
+            }
         }
 
-        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter)
+        public virtual TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return DbSet.Find(id);
         }
 
-        public int Count(Expression<Func<TEntity, bool>> filter)
+        public virtual IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return DbSet.ToList();
+        }
+
+        public virtual IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where)
+        {
+            return DbSet.Where(where).ToList();
+        }
+
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> where)
+        {
+            return DbSet.Where(where).FirstOrDefault<TEntity>();
+        }
+
+        public int Count(Expression<Func<TEntity, bool>> where = null)
+        {
+            return DbSet.Count(where);
+        }
+
+        public bool IsExist(Expression<Func<TEntity, bool>> where = null)
+        {
+            return DbSet.FirstOrDefault(where) != null;
+        }
+
+        public void Save()
+        {
+            try
+            {
+                casinoContext.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                StringBuilder builder = new StringBuilder();
+                foreach (var errors in e.EntityValidationErrors)
+                {
+                    builder.Append(string.Format(
+                        "Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        errors.Entry.Entity.GetType().Name, errors.Entry.State) + Environment.NewLine);
+                    foreach (var dbValidationError in errors.ValidationErrors)
+                    {
+                        builder.Append(string.Format("- Property: \"{0}\", Error: \"{1}\"",
+                        dbValidationError.PropertyName, dbValidationError.ErrorMessage));
+                    }
+                }
+                throw new Exception(builder.ToString(), e);
+            }
         }
     }
 }
