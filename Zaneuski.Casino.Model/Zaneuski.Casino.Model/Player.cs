@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class Player : Person
+    public class Player : Person, IInitializer
     {
         public string PhoneNumber { get; set; }
 
@@ -26,13 +26,14 @@ namespace Zaneuski.Casino.Model
 
         public Player()
         {
-
+            Initialize();
         }
 
         public Player(string login, string password, string surname, string firstname, bool sex, string email,
             DateTime birth, Country country, string phoneNumber, PassportInformation passport)
             : base(login, password, surname, firstname, sex, email, birth, country)
         {
+            Initialize();
             this.PhoneNumber = phoneNumber;
             this.AccountBalance = 0;
             this.VerifyFlag = false;
@@ -43,10 +44,19 @@ namespace Zaneuski.Casino.Model
             DateTime birth, Country country, string phoneNumber, PassportInformation passport, double accountBalance, bool verifyFlag)
             : base(login, password, surname, firstname, sex, email, birth, country)
         {
+            Initialize();
             this.PhoneNumber = phoneNumber;
             this.AccountBalance = accountBalance;
             this.VerifyFlag = verifyFlag;
             this.Passport = passport;
+        }
+
+        public void Initialize()
+        {
+            this.Friends = new List<Player>();
+            Friends.Add(this);
+            this.Tournaments = new List<Tournament>();
+            this.RoundResults = new List<RoundResult>();
         }
     }
 }

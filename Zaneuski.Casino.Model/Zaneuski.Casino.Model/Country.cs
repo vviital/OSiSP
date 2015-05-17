@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class Country : BaseUnit
+    public class Country : BaseUnit, IInitializer
     {
 
         public Country()
@@ -17,6 +17,12 @@ namespace Zaneuski.Casino.Model
         public Country(string country)
         {
             this.CountryName = country;
+        }
+
+        public void Initialize()
+        {
+            this.Administrators = new List<Administrator>();
+            this.Players = new List<Player>();
         }
 
         public string CountryName { get; set; }

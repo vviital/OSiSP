@@ -123,5 +123,14 @@ namespace Zaneuski.Casino.Data.Repository
                 throw new Exception(builder.ToString(), e);
             }
         }
+
+        public void Dispose()
+        {
+            if (casinoContext != null)
+            {
+                casinoContext.Dispose();
+                casinoContext = null;
+            }
+        }
     }
 }

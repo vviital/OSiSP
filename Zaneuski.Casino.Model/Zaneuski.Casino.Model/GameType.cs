@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class GameType : BaseUnit
+    public class GameType : BaseUnit, IInitializer
     {
         public string Type { get; set; }
 
@@ -16,12 +16,18 @@ namespace Zaneuski.Casino.Model
 
         public GameType()
         {
-
+            Initialize();
         }
 
         public GameType(string type)
         {
+            Initialize();
             this.Type = type;
+        }
+
+        public void Initialize()
+        {
+            this.Tournaments = new List<Tournament>();
         }
     }
 }

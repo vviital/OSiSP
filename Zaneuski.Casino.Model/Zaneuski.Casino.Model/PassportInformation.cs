@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace Zaneuski.Casino.Model
 
         public PassportInformation()
         {
-
+            
         }
 
         public PassportInformation(string passportNumber, string nationality, DateTime expirationDate)

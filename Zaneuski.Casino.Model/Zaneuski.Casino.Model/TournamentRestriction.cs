@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class TournamentRestriction : BaseUnit
+    public class TournamentRestriction : BaseUnit, IInitializer
     {
         public int MinimumNumberOfWins { get; set; }
 
@@ -18,14 +18,20 @@ namespace Zaneuski.Casino.Model
 
         public TournamentRestriction()
         {
-
+            Initialize();
         }
 
         public TournamentRestriction(string typeCode, int minimumNumberOfWins, int maximumNumberOfWins, double fee)
         {
+            Initialize();
             this.MinimumNumberOfWins = minimumNumberOfWins;
             this.MaximumNumberOfWins = maximumNumberOfWins;
             this.Fee = fee;
+        }
+
+        public void Initialize()
+        {
+            this.Tournaments = new List<Tournament>();
         }
     }
 }

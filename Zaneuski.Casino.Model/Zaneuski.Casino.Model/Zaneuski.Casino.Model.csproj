@@ -43,6 +43,7 @@
     <Compile Include="BaseUnit.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="GameType.cs" />
+    <Compile Include="IInitializer.cs" />
     <Compile Include="PassportInformation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Player.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class Round : BaseUnit
+    public class Round : BaseUnit, IInitializer
     {
         public int RoomNumber { get; set; }
 
@@ -16,12 +16,18 @@ namespace Zaneuski.Casino.Model
 
         public Round()
         {
-
+            Initialize();
         }
 
         public Round(int roomNumber)
         {
+            Initialize();
             this.RoomNumber = roomNumber;
+        }
+
+        public void Initialize()
+        {
+            this.RoundResults = new List<RoundResult>();
         }
     }
 }

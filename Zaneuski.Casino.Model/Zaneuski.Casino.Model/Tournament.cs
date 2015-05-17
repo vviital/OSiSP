@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zaneuski.Casino.Model
 {
-    public class Tournament : BaseUnit
+    public class Tournament : BaseUnit, IInitializer
     {
         public virtual GameType GameType { get; set; }
 
@@ -25,12 +25,13 @@ namespace Zaneuski.Casino.Model
 
         public Tournament()
         {
-
+            Initialize();
         }
 
         public Tournament(GameType gameType, List<Player> participants, Administrator administrator,
             TournamentRestriction restriction, string tournamentName, DateTime schedule, List<Round> rounds)
         {
+            Initialize();
             this.GameType = gameType;
             this.Participants = participants;
             this.Admin = administrator;
@@ -38,6 +39,12 @@ namespace Zaneuski.Casino.Model
             this.TournamentName = tournamentName;
             this.Schedule = schedule;
             this.Rounds = rounds;
+        }
+
+        public void Initialize()
+        {
+            this.Participants = new List<Player>();
+            this.Rounds = new List<Round>();
         }
     }
 }
