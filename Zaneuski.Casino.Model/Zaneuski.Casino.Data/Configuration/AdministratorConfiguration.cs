@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,11 @@ namespace Zaneuski.Casino.Data.Configuration
 
             Property(o => o.Email).IsRequired();
 
-            HasMany(o => o.ObservedPlayers).WithRequired(s => s.Admin);
+            HasMany(o => o.ObservedPlayers).WithRequired(s => s.Admin).WillCascadeOnDelete(false);
 
-            HasMany(o => o.SupervisedTournaments).WithRequired(s => s.Admin);
+            HasMany(o => o.SupervisedTournaments).WithRequired(s => s.Admin).WillCascadeOnDelete(false);
+
+            
         }
     }
 }
