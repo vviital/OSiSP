@@ -31,8 +31,8 @@ namespace Zaneuski.Casino.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Type[] types = GetType().
-                Assembly.GetTypes().
-                    Where(x => x.BaseType != null && x.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>)).ToArray();
+                Assembly.GetTypes().Where(x => x.BaseType != null && x.BaseType.IsGenericType && x.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>)).ToArray();//.
+                   // Where(x => x.BaseType != null && x.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>)).ToArray();
             foreach (var type in types)
             {
                 dynamic obj = Activator.CreateInstance(type);

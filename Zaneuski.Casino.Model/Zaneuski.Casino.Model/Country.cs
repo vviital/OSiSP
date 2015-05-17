@@ -11,11 +11,12 @@ namespace Zaneuski.Casino.Model
 
         public Country()
         {
-
+            Initialize();
         }
 
         public Country(string country)
         {
+            Initialize();
             this.CountryName = country;
         }
 

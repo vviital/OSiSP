@@ -19,6 +19,8 @@ namespace Zaneuski.Casino.Data.Configuration
             Property(o => o.PassportNumber).IsRequired().HasMaxLength(50);
 
             Property(o => o.ExpirationDate).IsRequired();
+
+            HasRequired(o => o.Player).WithRequiredPrincipal(s => s.Passport);
         }
     }
 }

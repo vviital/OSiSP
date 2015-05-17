@@ -14,7 +14,9 @@ namespace Zaneuski.Casino.Model
 
         public bool VerifyFlag { get; set; }
 
-        public virtual List<Player> Friends { get; set; }
+        public virtual List<Player> isFriends { get; set; }
+
+        public virtual List<Player> haveFriends { get; set; } 
 
         public virtual Administrator Admin { get; set; }
 
@@ -53,8 +55,10 @@ namespace Zaneuski.Casino.Model
 
         public void Initialize()
         {
-            this.Friends = new List<Player>();
-            Friends.Add(this);
+            this.isFriends = new List<Player>();
+            this.haveFriends = new List<Player>();
+            isFriends.Add(this);
+            haveFriends.Add(this);
             this.Tournaments = new List<Tournament>();
             this.RoundResults = new List<RoundResult>();
         }

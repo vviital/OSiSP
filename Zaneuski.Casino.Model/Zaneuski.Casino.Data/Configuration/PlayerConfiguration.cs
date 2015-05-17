@@ -36,7 +36,7 @@ namespace Zaneuski.Casino.Data.Configuration
 
             HasMany(o => o.Tournaments).WithMany(s => s.Participants);
 
-            HasMany(o => o.Friends).WithMany(s => s.Friends);
+            HasMany(o => o.haveFriends).WithMany(s => s.isFriends);
 
             HasMany(o => o.RoundResults).WithRequired(s => s.Participant);
         }
