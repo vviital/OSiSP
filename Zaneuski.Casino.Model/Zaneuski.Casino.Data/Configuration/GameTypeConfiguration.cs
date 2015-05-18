@@ -16,7 +16,7 @@ namespace Zaneuski.Casino.Data.Configuration
 
             Property(o => o.Type).IsRequired().HasMaxLength(50);
 
-            HasMany(o => o.Tournaments).WithRequired(s => s.GameType);
+            HasMany(o => o.Tournaments).WithRequired(s => s.GameType).WillCascadeOnDelete(false);
         }
     }
 }

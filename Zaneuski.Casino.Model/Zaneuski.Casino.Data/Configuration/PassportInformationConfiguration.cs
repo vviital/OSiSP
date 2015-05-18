@@ -20,7 +20,7 @@ namespace Zaneuski.Casino.Data.Configuration
 
             Property(o => o.ExpirationDate).IsRequired();
 
-            HasRequired(o => o.Player).WithRequiredPrincipal(s => s.Passport);
+            HasRequired(o => o.Player).WithRequiredPrincipal(s => s.Passport).WillCascadeOnDelete(false);
         }
     }
 }

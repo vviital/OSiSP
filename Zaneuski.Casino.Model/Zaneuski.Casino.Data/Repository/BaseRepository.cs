@@ -26,6 +26,7 @@ namespace Zaneuski.Casino.Data.Repository
             casinoContext = context;
         } 
 
+        //linqkit
         public virtual List<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {

@@ -38,7 +38,7 @@ namespace Zaneuski.Casino.Data.Configuration
 
             HasMany(o => o.haveFriends).WithMany(s => s.isFriends);
 
-            HasMany(o => o.RoundResults).WithRequired(s => s.Participant);
+            HasMany(o => o.RoundResults).WithRequired(s => s.Participant).WillCascadeOnDelete(false);
         }
     }
 }

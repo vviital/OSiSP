@@ -16,7 +16,7 @@ namespace Zaneuski.Casino.Data.Configuration
 
             Property(o => o.RoomNumber).IsRequired();
 
-            HasMany(o => o.RoundResults).WithRequired(s => s.TournamentRoom);
+            HasMany(o => o.RoundResults).WithRequired(s => s.TournamentRoom).WillCascadeOnDelete(false);
         }
     }
 }
