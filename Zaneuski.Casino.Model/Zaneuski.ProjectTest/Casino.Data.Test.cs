@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Net.Mime;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Zaneuski.Casino.Data;
 using Zaneuski.Casino.Data.Repository;
@@ -103,11 +106,215 @@ namespace Zaneuski.ProjectTest
                 BaseRepository<Country> countries = new CountryRepository(context);
                 BaseRepository<PassportInformation> passports = new PassportInformationRepository(context);
 
-                admins.Add(admin);
-                players.Add(player1);
+                if (admins.GetAll() == null || admins.GetAll().Count() == 0)
+                {
+                    admins.Add(admin);
+                    admins.Save();
+                }
+            }
+            Assert.AreEqual(true, true);
+        }
+        
+        [TestMethod]
+        public void MakeSingleAddDeleteTest()
+        {
+            Country country = new Country() {CountryName = "USA"};
+            bool good = false;
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Country> countries = new CountryRepository(context);
+                int oldCount = countries.Count(o => o.CountryName != null);
+                countries.Add(country);
+                countries.Save();
+                int newCount = countries.Count(o => o.CountryName != null);
+                if (newCount - 1 == oldCount)
+                {
+                    good = true;
+                }
+                Country entity = countries.Get(o => o.CountryName.CompareTo("USA") == 0);
+                countries.Delete(entity);
+                countries.Save();
+            }
+            Assert.AreEqual(true, good);
+        }
 
-                int num = 0;
-                num++;
+        [TestMethod]
+        public void MakeUpdateTest()
+        {
+            bool good = false;
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Administrator> admins = new AdministratorRepository(context);
+                Administrator admin = admins.Get(o => o.FirstName == "Vitali");
+                admin.FirstName = "vitali";
+                admins.Update(admin);
+                admins.Save();
+                admin = admins.Get(o => o.FirstName == "vitali");
+                if (admin.FirstName.CompareTo("vitali") == 0)
+                {
+                    good = true;
+                }
+                admin.FirstName = "Vitali";
+                admins.Update(admin);
+                admins.Save();
+            }
+            Assert.AreEqual(true, good);
+        }
+
+        // Ask question
+        [TestMethod]
+        public void MakeMultipleDeleteTest()
+        {
+            bool good = true;
+            using (var context = new CasinoContext())
+            {
+                GameType type1 = new GameType(){Type = "New Type1"};
+                GameType type2 = new GameType() {Type = "New Type2"};
+
+                BaseRepository<GameType> gameTypes = new GameTypeRepository(context);
+
+                int oldCount = gameTypes.GetAll().Count();
+
+                gameTypes.Add(type1);
+                gameTypes.Add(type2);
+                gameTypes.Save();
+
+                //Work
+                //List<GameType> games = (List<GameType>)gameTypes.GetMany(o => o.Type == "New Type1");
+                int newCount = gameTypes.GetAll().Count();
+
+                if (newCount - 2 != oldCount)
+                {
+                    good = false;
+                }
+
+                // didn't work!!!
+                //Func<GameType, bool> predicateCheckName = o =>
+                //{
+                //    return true;
+                //    string templ = "New Type";
+                //    if (o.Type.Count() < templ.Count()) return false;
+                //    bool ok = true;
+                //    for(int iter = 0; iter < templ.Count(); iter++)
+                //        if (templ[iter].CompareTo(o.Type[iter]) != 0)
+                //            ok = false;
+                //    return ok;
+                //};
+                //gameTypes.Delete(o => predicateCheckName(o));
+
+                gameTypes.Delete(o => o.Type == "New Type1" || o.Type == "New Type2");
+                gameTypes.Save();
+                if (gameTypes.GetAll().Count() != oldCount)
+                {
+                    good = false;
+                }
+            }
+            Assert.AreEqual(true, good);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void MakeGetByIdTest()
+        {
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Administrator> admins = new AdministratorRepository(context);
+                int invalidID = Int32.MaxValue;
+                Administrator administrator = admins.GetById(invalidID);
+                bool check = administrator.Id.CompareTo(invalidID) == 0;
+                Assert.AreEqual(true, false);
+            }
+        }
+
+        [TestMethod]
+        public void MakeGetAllTest()
+        {
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Administrator> admins = new AdministratorRepository(context);
+                List<Administrator> administrators = (List<Administrator>)admins.GetAll();
+                Assert.AreEqual(1, administrators.Count());
+            }
+        }
+
+        [TestMethod]
+        public void MakeGetManyTest()
+        {
+            bool good = true;
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Player> players = new PlayerRepository(context);
+                
+                List<Player> players_query_1 = (List<Player>)players.GetMany(o => o.Sex);
+                List<Player> players_query_2 = (List<Player>) players.GetMany(o => o.Admin.FirstName == "Vitali");
+
+                if (players_query_1.Count() != 2)
+                {
+                    good = false;
+                }
+
+                if (players_query_2.Count() != 2)
+                {
+                    good = false;
+                }
+            }
+            Assert.AreEqual(true, good);
+        }
+
+        // Questions - two things which should be the same work differently
+        [TestMethod]
+        public void MakeGetTest()
+        {
+            bool good = true;
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Tournament> tournaments = new TournamentRepository(context);
+
+                //http://www.cyberforum.ru/csharp-net/thread1374178.html
+                // Doesn't work
+                //Func<Tournament, bool> filter = o => o.GameType.Type == "Texas hold 'em";
+
+                //Tournament tournament = tournaments.Get(o => filter(o));
+
+                Tournament tournament = tournaments.Get(o => o.GameType.Type == "Texas hold 'em");
+
+                if (tournament.TournamentName == null)
+                    good = false;
+            }
+            Assert.AreEqual(true, good);
+        }
+
+        [TestMethod]
+        public void MakeCountTest()
+        {
+            bool good = true;
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<TournamentRestriction> repository = new TournamentRestrictionRepository(context);
+
+                int count = repository.Count(o => o.Id == 0 || o.Id != 0);
+
+                if (count != repository.GetAll().Count())
+                {
+                    good = false;
+                }
+            }
+            Assert.AreEqual(true, good);
+        }
+
+        [TestMethod]
+        public void MakeIsExistTest()
+        {
+            using (var context = new CasinoContext())
+            {
+                BaseRepository<Administrator> admins = new AdministratorRepository(context);
+
+                //Func<BaseUnit, bool> filter = o => o.Id == 0 || o.Id != 0;
+                Administrator admin = admins.Get(o => o.Id == 0 || o.Id != 0);
+
+                if (admin == null) throw new Exception();
+
+                Assert.AreEqual(true, admins.IsExist(o => o.Id == 0 || o.Id != 0));
             }
         }
     }

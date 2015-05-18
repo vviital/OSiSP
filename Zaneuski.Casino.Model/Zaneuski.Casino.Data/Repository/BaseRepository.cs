@@ -64,7 +64,10 @@ namespace Zaneuski.Casino.Data.Repository
 
         public virtual void Delete(Expression<Func<TEntity, bool>> where)
         {
-            IEnumerable<TEntity> objects = DbSet.Where<TEntity>(where).AsEnumerable();
+            IQueryable<TEntity> entities = DbSet.Where(where);
+            List<TEntity> objects = entities.ToList();
+            //IEnumerable<TEntity> objects = DbSet.Where(where).ToList();//.AsEnumerable();
+            //IEnumerable<TEntity> objects = DbSet.Where<TEntity>(where).AsEnumerable();
             foreach (var entity in objects)
             {
                 DbSet.Remove(entity);
