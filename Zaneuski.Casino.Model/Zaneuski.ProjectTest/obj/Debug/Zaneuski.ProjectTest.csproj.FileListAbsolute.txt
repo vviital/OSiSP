@@ -12,3 +12,17 @@ D:\Программирование\GitHub\OSiSP\Zaneuski.Casino.Model\Zaneuski.
 D:\Программирование\GitHub\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.SqlServer.xml
 D:\Программирование\GitHub\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.dll
 D:\Программирование\GitHub\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.csprojResolveAssemblyReference.cache
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.ProjectTest.dll.config
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.ProjectTest.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.ProjectTest.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.Data.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.Model.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.Data.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.Model.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.xml
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.pdb
