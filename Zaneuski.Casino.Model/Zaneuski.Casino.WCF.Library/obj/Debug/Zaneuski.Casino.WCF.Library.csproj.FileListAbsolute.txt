@@ -1,0 +1,14 @@
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.WCF.Library.dll.config
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.WCF.Library.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.WCF.Library.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\obj\Debug\Zaneuski.Casino.WCF.Library.csprojResolveAssemblyReference.cache
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\obj\Debug\Zaneuski.Casino.WCF.Library.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\obj\Debug\Zaneuski.Casino.WCF.Library.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\EntityFramework.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\EntityFramework.SqlServer.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\EntityFramework.xml
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\EntityFramework.SqlServer.xml
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.Data.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.Model.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.Data.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.Casino.WCF.Library\bin\Debug\Zaneuski.Casino.Model.pdb

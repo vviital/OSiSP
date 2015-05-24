@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zaneuski.Casino.Model", "Za
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zaneuski.ProjectTest", "Zaneuski.ProjectTest\Zaneuski.ProjectTest.csproj", "{24F4CA9E-698F-4D63-BF1B-E0BD7BD71B78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zaneuski.Casino.WCF.Library", "Zaneuski.Casino.WCF.Library\Zaneuski.Casino.WCF.Library.csproj", "{12EE5D34-2359-4BD4-9CBC-5B0758B2F951}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{24F4CA9E-698F-4D63-BF1B-E0BD7BD71B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F4CA9E-698F-4D63-BF1B-E0BD7BD71B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F4CA9E-698F-4D63-BF1B-E0BD7BD71B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12EE5D34-2359-4BD4-9CBC-5B0758B2F951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EE5D34-2359-4BD4-9CBC-5B0758B2F951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12EE5D34-2359-4BD4-9CBC-5B0758B2F951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12EE5D34-2359-4BD4-9CBC-5B0758B2F951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

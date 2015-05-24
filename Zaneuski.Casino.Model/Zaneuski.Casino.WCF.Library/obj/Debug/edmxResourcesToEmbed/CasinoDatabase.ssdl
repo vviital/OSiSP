@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CasinoDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="Administrator ID" />
+    </Key>
+    <Property Name="Administrator ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="bit" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birth" Type="datetime" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Country code" />
+    </Key>
+    <Property Name="Country code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GameTypes">
+    <Key>
+      <PropertyRef Name="Game type ID" />
+    </Key>
+    <Property Name="Game type ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PassportInformations">
+    <Key>
+      <PropertyRef Name="Passport ID" />
+    </Key>
+    <Property Name="Passport ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PassportNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlayerPlayers">
+    <Key>
+      <PropertyRef Name="Player_Id" />
+      <PropertyRef Name="Player_Id1" />
+    </Key>
+    <Property Name="Player_Id" Type="int" Nullable="false" />
+    <Property Name="Player_Id1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Player ID" />
+    </Key>
+    <Property Name="Player ID" Type="int" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountBalance" Type="float" Nullable="false" />
+    <Property Name="VerifyFlag" Type="bit" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="bit" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birth" Type="datetime" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+    <Property Name="Admin_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlayerTournaments">
+    <Key>
+      <PropertyRef Name="Player_Id" />
+      <PropertyRef Name="Tournament_Id" />
+    </Key>
+    <Property Name="Player_Id" Type="int" Nullable="false" />
+    <Property Name="Tournament_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoundResults">
+    <Key>
+      <PropertyRef Name="Round result ID" />
+    </Key>
+    <Property Name="Round result ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gain" Type="float" Nullable="false" />
+    <Property Name="TournamentRoom_Id" Type="int" Nullable="false" />
+    <Property Name="Participant_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rounds">
+    <Key>
+      <PropertyRef Name="Round ID" />
+    </Key>
+    <Property Name="Round ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomNumber" Type="int" Nullable="false" />
+    <Property Name="Tournament_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TournamentRestrictions">
+    <Key>
+      <PropertyRef Name="Tournament restriction ID" />
+    </Key>
+    <Property Name="Tournament restriction ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MinimumNumberOfWins" Type="int" Nullable="false" />
+    <Property Name="MaximumNumberOfWins" Type="int" Nullable="false" />
+    <Property Name="Fee" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tournaments">
+    <Key>
+      <PropertyRef Name="Tournament ID" />
+    </Key>
+    <Property Name="Tournament ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TournamentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Schedule" Type="datetime" Nullable="false" />
+    <Property Name="GameType_Id" Type="int" Nullable="false" />
+    <Property Name="Restriction_Id" Type="int" Nullable="false" />
+    <Property Name="Admin_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Administrators_dbo_Countries_Country_Id">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Administrators" Type="Self.Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Country code" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlayerPlayers_dbo_Players_Player_Id">
+    <End Role="Players" Type="Self.Players" Multiplicity="1" />
+    <End Role="PlayerPlayers" Type="Self.PlayerPlayers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Player ID" />
+      </Principal>
+      <Dependent Role="PlayerPlayers">
+        <PropertyRef Name="Player_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlayerPlayers_dbo_Players_Player_Id1">
+    <End Role="Players" Type="Self.Players" Multiplicity="1" />
+    <End Role="PlayerPlayers" Type="Self.PlayerPlayers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Player ID" />
+      </Principal>
+      <Dependent Role="PlayerPlayers">
+        <PropertyRef Name="Player_Id1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Players_dbo_Administrators_Admin_Id">
+    <End Role="Administrators" Type="Self.Administrators" Multiplicity="1" />
+    <End Role="Players" Type="Self.Players" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrators">
+        <PropertyRef Name="Administrator ID" />
+      </Principal>
+      <Dependent Role="Players">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Players_dbo_Countries_Country_Id">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="Players" Type="Self.Players" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Country code" />
+      </Principal>
+      <Dependent Role="Players">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Players_dbo_PassportInformations_Player ID">
+    <End Role="PassportInformations" Type="Self.PassportInformations" Multiplicity="1" />
+    <End Role="Players" Type="Self.Players" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PassportInformations">
+        <PropertyRef Name="Passport ID" />
+      </Principal>
+      <Dependent Role="Players">
+        <PropertyRef Name="Player ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlayerTournaments_dbo_Players_Player_Id">
+    <End Role="Players" Type="Self.Players" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PlayerTournaments" Type="Self.PlayerTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Player ID" />
+      </Principal>
+      <Dependent Role="PlayerTournaments">
+        <PropertyRef Name="Player_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PlayerTournaments_dbo_Tournaments_Tournament_Id">
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PlayerTournaments" Type="Self.PlayerTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="Tournament ID" />
+      </Principal>
+      <Dependent Role="PlayerTournaments">
+        <PropertyRef Name="Tournament_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoundResults_dbo_Players_Participant_Id">
+    <End Role="Players" Type="Self.Players" Multiplicity="1" />
+    <End Role="RoundResults" Type="Self.RoundResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Player ID" />
+      </Principal>
+      <Dependent Role="RoundResults">
+        <PropertyRef Name="Participant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoundResults_dbo_Rounds_TournamentRoom_Id">
+    <End Role="Rounds" Type="Self.Rounds" Multiplicity="1" />
+    <End Role="RoundResults" Type="Self.RoundResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rounds">
+        <PropertyRef Name="Round ID" />
+      </Principal>
+      <Dependent Role="RoundResults">
+        <PropertyRef Name="TournamentRoom_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Rounds_dbo_Tournaments_Tournament_Id">
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
+    <End Role="Rounds" Type="Self.Rounds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="Tournament ID" />
+      </Principal>
+      <Dependent Role="Rounds">
+        <PropertyRef Name="Tournament_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tournaments_dbo_Administrators_Admin_Id">
+    <End Role="Administrators" Type="Self.Administrators" Multiplicity="1" />
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrators">
+        <PropertyRef Name="Administrator ID" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tournaments_dbo_GameTypes_GameType_Id">
+    <End Role="GameTypes" Type="Self.GameTypes" Multiplicity="1" />
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GameTypes">
+        <PropertyRef Name="Game type ID" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="GameType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tournaments_dbo_TournamentRestrictions_Restriction_Id">
+    <End Role="TournamentRestrictions" Type="Self.TournamentRestrictions" Multiplicity="1" />
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TournamentRestrictions">
+        <PropertyRef Name="Tournament restriction ID" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="Restriction_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="CasinoDataBaseModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Administrators" EntityType="Self.Administrators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameTypes" EntityType="Self.GameTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PassportInformations" EntityType="Self.PassportInformations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerPlayers" EntityType="Self.PlayerPlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerTournaments" EntityType="Self.PlayerTournaments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoundResults" EntityType="Self.RoundResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rounds" EntityType="Self.Rounds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TournamentRestrictions" EntityType="Self.TournamentRestrictions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Administrators_dbo_Countries_Country_Id" Association="Self.FK_dbo_Administrators_dbo_Countries_Country_Id">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlayerPlayers_dbo_Players_Player_Id" Association="Self.FK_dbo_PlayerPlayers_dbo_Players_Player_Id">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerPlayers" EntitySet="PlayerPlayers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlayerPlayers_dbo_Players_Player_Id1" Association="Self.FK_dbo_PlayerPlayers_dbo_Players_Player_Id1">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerPlayers" EntitySet="PlayerPlayers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Players_dbo_Administrators_Admin_Id" Association="Self.FK_dbo_Players_dbo_Administrators_Admin_Id">
+      <End Role="Administrators" EntitySet="Administrators" />
+      <End Role="Players" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Players_dbo_Countries_Country_Id" Association="Self.FK_dbo_Players_dbo_Countries_Country_Id">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Players" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Players_dbo_PassportInformations_Player ID" Association="Self.FK_dbo_Players_dbo_PassportInformations_Player ID">
+      <End Role="PassportInformations" EntitySet="PassportInformations" />
+      <End Role="Players" EntitySet="Players" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlayerTournaments_dbo_Players_Player_Id" Association="Self.FK_dbo_PlayerTournaments_dbo_Players_Player_Id">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerTournaments" EntitySet="PlayerTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PlayerTournaments_dbo_Tournaments_Tournament_Id" Association="Self.FK_dbo_PlayerTournaments_dbo_Tournaments_Tournament_Id">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="PlayerTournaments" EntitySet="PlayerTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoundResults_dbo_Players_Participant_Id" Association="Self.FK_dbo_RoundResults_dbo_Players_Participant_Id">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="RoundResults" EntitySet="RoundResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoundResults_dbo_Rounds_TournamentRoom_Id" Association="Self.FK_dbo_RoundResults_dbo_Rounds_TournamentRoom_Id">
+      <End Role="Rounds" EntitySet="Rounds" />
+      <End Role="RoundResults" EntitySet="RoundResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Rounds_dbo_Tournaments_Tournament_Id" Association="Self.FK_dbo_Rounds_dbo_Tournaments_Tournament_Id">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="Rounds" EntitySet="Rounds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tournaments_dbo_Administrators_Admin_Id" Association="Self.FK_dbo_Tournaments_dbo_Administrators_Admin_Id">
+      <End Role="Administrators" EntitySet="Administrators" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tournaments_dbo_GameTypes_GameType_Id" Association="Self.FK_dbo_Tournaments_dbo_GameTypes_GameType_Id">
+      <End Role="GameTypes" EntitySet="GameTypes" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tournaments_dbo_TournamentRestrictions_Restriction_Id" Association="Self.FK_dbo_Tournaments_dbo_TournamentRestrictions_Restriction_Id">
+      <End Role="TournamentRestrictions" EntitySet="TournamentRestrictions" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
