@@ -21,7 +21,7 @@ namespace Zaneuski.Casino.Model
 
         public DateTime Schedule { get; set; }
 
-        public List<Round> Rounds { get; set; }
+        public virtual List<Round> Rounds { get; set; }
 
         public Tournament()
         {
