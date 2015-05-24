@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using System.Collections.Generic;
 using Zaneuski.Casino.Data;
 using Zaneuski.Casino.Data.Repository;
 using Zaneuski.Casino.Model;
