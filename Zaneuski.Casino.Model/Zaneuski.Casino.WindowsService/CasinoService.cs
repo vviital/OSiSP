@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.ServiceModel;
-using System.ServiceModel.Description;
-using System.ServiceModel.Security;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Zaneuski.Casino.WindowsService
+﻿namespace Zaneuski.Casino.WindowsService
 {
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using System.ServiceModel;
+    using System.ServiceModel.Description;
+    using System.ServiceProcess;
+
+    /// <summary>
+    /// CasinoService
+    /// </summary>
     public partial class CasinoService : ServiceBase
     {
+        /// <summary>
+        /// The hosts
+        /// </summary>
         private ServiceHost[] _hosts;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CasinoService"/> class.
+        /// </summary>
         public CasinoService()
         {
             Assembly assembly = Assembly.Load("Zaneuski.Casino.WcfServiceLibrary");
@@ -33,6 +35,10 @@ namespace Zaneuski.Casino.WindowsService
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When implemented in a derived class, executes when a Start command is sent to the service by the Service Control Manager (SCM) or when the operating system starts (for a service that starts automatically). Specifies actions to take when the service starts.
+        /// </summary>
+        /// <param name="args">Data passed by the start command.</param>
         protected override void OnStart(string[] args)
         {
             //http://localhost:9001/CalcService
@@ -67,6 +73,9 @@ namespace Zaneuski.Casino.WindowsService
             }
         }
 
+        /// <summary>
+        /// When implemented in a derived class, executes when a Stop command is sent to the service by the Service Control Manager (SCM). Specifies actions to take when a service stops running.
+        /// </summary>
         protected override void OnStop()
         {
             for (int i = 0; i < this._hosts.Count(); ++i)

@@ -57,7 +57,9 @@
     <Compile Include="IAdministratorService.cs" />
     <Compile Include="ICountryService.cs" />
     <Compile Include="IGameTypeService.cs" />
-    <Compile Include="IPassportInformationService.cs" />
+    <Compile Include="IPassportInformationService.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="IPlayerService.cs" />
     <Compile Include="IRoundResultService.cs" />
     <Compile Include="IRoundService.cs" />

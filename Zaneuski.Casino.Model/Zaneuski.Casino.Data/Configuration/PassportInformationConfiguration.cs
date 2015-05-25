@@ -1,10 +1,16 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using Zaneuski.Casino.Model;
-
-namespace Zaneuski.Casino.Data.Configuration
+﻿namespace Zaneuski.Casino.Data.Configuration
 {
+    using System.Data.Entity.ModelConfiguration;
+    using Zaneuski.Casino.Model;
+
+    /// <summary>
+    /// PassportInformation Configuration class
+    /// </summary>
     public class PassportInformationConfiguration : EntityTypeConfiguration<PassportInformation>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PassportInformationConfiguration"/> class.
+        /// </summary>
         public PassportInformationConfiguration()
         {
             HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Passport ID");

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Zaneuski.Casino.Model;
-using Zaneuski.Casino.WcfServiceLibrary;
-using Zaneuski.ProjectTest.ServiceReference1;
-using Zaneuski.ProjectTest.ServiceReference2;
-using Zaneuski.ProjectTest.ServiceReference3;
-using Zaneuski.ProjectTest.ServiceReference4;
-using Zaneuski.ProjectTest.ServiceReference5;
-using Zaneuski.ProjectTest.ServiceReference6;
-using Zaneuski.ProjectTest.ServiceReference7;
-using Zaneuski.ProjectTest.ServiceReference8;
-using Zaneuski.ProjectTest.ServiceReference9;
-
-namespace Zaneuski.ProjectTest
+﻿namespace Zaneuski.ProjectTest
 {
+    using System;
+    using System.Text;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Policy;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Zaneuski.Casino.Model;
+    using Zaneuski.Casino.WcfServiceLibrary;
+    using Zaneuski.ProjectTest.ServiceReference1;
+    using Zaneuski.ProjectTest.ServiceReference2;
+    using Zaneuski.ProjectTest.ServiceReference3;
+    using Zaneuski.ProjectTest.ServiceReference4;
+    using Zaneuski.ProjectTest.ServiceReference5;
+    using Zaneuski.ProjectTest.ServiceReference6;
+    using Zaneuski.ProjectTest.ServiceReference7;
+    using Zaneuski.ProjectTest.ServiceReference8;
+    using Zaneuski.ProjectTest.ServiceReference9;
+
     /// <summary>
     /// Summary description for WindowsServiceTest
     /// </summary>
@@ -35,8 +35,11 @@ namespace Zaneuski.ProjectTest
         private readonly PassportInformationServiceClient _passportInformationServiceClient = new PassportInformationServiceClient();
         private readonly CountryServiceClient _countryServiceClient = new CountryServiceClient();
 
+        /// <summary>
+        /// Tests the getAll methods.
+        /// </summary>
         [TestMethod]
-        public void TestGetALLMethods()
+        public void TestGetAllMethods()
         {
             bool good = true;
 

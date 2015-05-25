@@ -1,10 +1,16 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using Zaneuski.Casino.Model;
-
-namespace Zaneuski.Casino.Data.Configuration
+﻿namespace Zaneuski.Casino.Data.Configuration
 {
+    using System.Data.Entity.ModelConfiguration;
+    using Zaneuski.Casino.Model;
+
+    /// <summary>
+    /// Player Configuration class
+    /// </summary>
     public class PlayerConfiguration : EntityTypeConfiguration<Player>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayerConfiguration"/> class.
+        /// </summary>
         public PlayerConfiguration()
         {
             HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Player ID");

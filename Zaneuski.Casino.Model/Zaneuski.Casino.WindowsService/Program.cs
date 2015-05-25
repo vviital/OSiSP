@@ -1,7 +1,10 @@
-﻿using System.ServiceProcess;
-
-namespace Zaneuski.Casino.WindowsService
+﻿namespace Zaneuski.Casino.WindowsService
 {
+    using System.ServiceProcess;
+
+    /// <summary>
+    /// Program
+    /// </summary>
     static class Program
     {
         /// <summary>

@@ -1,11 +1,13 @@
-﻿﻿using System.Collections.Generic;
-﻿using System.Runtime.Serialization;
-﻿using System.ServiceModel;
-﻿using Zaneuski.Casino.Model;
-
-namespace Zaneuski.Casino.WcfServiceLibrary
+﻿namespace Zaneuski.Casino.WcfServiceLibrary
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    ﻿using System.Collections.Generic;
+    ﻿using System.Runtime.Serialization;
+    ﻿using System.ServiceModel;
+    ﻿using Zaneuski.Casino.Model;
+
+    /// <summary>
+    /// ICountryService
+    /// </summary>
     [ServiceContract]
     public interface ICountryService
     {
@@ -14,39 +16,90 @@ namespace Zaneuski.Casino.WcfServiceLibrary
         // Update
         // Delete
 
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [OperationContract]
         CountryType Get(int id);
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
         [OperationContract]
         IEnumerable<CountryType> GetAll();
 
+        /// <summary>
+        /// Updates the specified country type.
+        /// </summary>
+        /// <param name="countryType">Type of the country.</param>
         [OperationContract]
         void Update(CountryType countryType);
 
+        /// <summary>
+        /// Deletes the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         [OperationContract]
         void Delete(int id);
 
+        /// <summary>
+        /// Adds the specified country.
+        /// </summary>
+        /// <param name="country">The country.</param>
         [OperationContract]
         void Add(CountryType country);
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "Zaneuski.Casino.WCF.Library.ContractType".
+    /// <summary>
+    /// CountryType
+    /// </summary>
     [DataContract]
     public class CountryType
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         [DataMember]
         public int Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the country.
+        /// </summary>
+        /// <value>
+        /// The name of the country.
+        /// </value>
         [DataMember]
         public string CountryName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the players identifier.
+        /// </summary>
+        /// <value>
+        /// The players identifier.
+        /// </value>
         [DataMember]
         public List<int> PlayersId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the admins identifier.
+        /// </summary>
+        /// <value>
+        /// The admins identifier.
+        /// </value>
         [DataMember]
         public List<int> AdminsId { get; set; }
 
+        /// <summary>
+        /// Converts the type of to composite.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
         public static CountryType ConvertToCompositeType(Country obj)
         {
             CountryType country = new CountryType() { CountryName = obj.CountryName, Id = obj.Id };
@@ -63,6 +116,11 @@ namespace Zaneuski.Casino.WcfServiceLibrary
             return country;
         }
 
+        /// <summary>
+        /// Converts the type of from composite.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
         public static Country ConvertFromCompositeType(CountryType obj)
         {
             Country country = new Country() { Id = obj.Id, CountryName = obj.CountryName };

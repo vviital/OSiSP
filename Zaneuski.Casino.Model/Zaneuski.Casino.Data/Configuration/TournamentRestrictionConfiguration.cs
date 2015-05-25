@@ -1,10 +1,16 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using Zaneuski.Casino.Model;
-
-namespace Zaneuski.Casino.Data.Configuration
+﻿namespace Zaneuski.Casino.Data.Configuration
 {
+    using System.Data.Entity.ModelConfiguration;
+    using Zaneuski.Casino.Model;
+
+    /// <summary>
+    /// TournamentRestriction Configuration class
+    /// </summary>
     public class TournamentRestrictionConfiguration : EntityTypeConfiguration<TournamentRestriction>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TournamentRestrictionConfiguration"/> class.
+        /// </summary>
         public TournamentRestrictionConfiguration()
         {
             HasKey(o => o.Id).Property(o => o.Id).HasColumnName("Tournament restriction ID");

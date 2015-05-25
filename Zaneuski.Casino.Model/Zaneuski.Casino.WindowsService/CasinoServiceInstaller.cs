@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration.Install;
-using System.Linq;
-using System.ServiceProcess;
-using System.Threading.Tasks;
-
-namespace Zaneuski.Casino.WindowsService
+﻿namespace Zaneuski.Casino.WindowsService
 {
+    using System.ComponentModel;
+    using System.ServiceProcess;
+
+    /// <summary>
+    /// CasinoServiceInstaller
+    /// </summary>
     [RunInstaller(true)]
     public partial class CasinoServiceInstaller : System.Configuration.Install.Installer
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CasinoServiceInstaller"/> class.
+        /// </summary>
         public CasinoServiceInstaller()
         {
             // InitializeComponent();
