@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.ServiceModel.Security;
 using System.ServiceProcess;
 using System.Text;
@@ -18,18 +20,50 @@ namespace Zaneuski.Casino.WindowsService
 
         public CasinoService()
         {
-            _hosts = new ServiceHost[1];
-            this._hosts[0] = null;
+            Assembly assembly = Assembly.Load("Zaneuski.Casino.WcfServiceLibrary");
+
+            Type[] types = assembly.GetTypes().Where(o => o.IsClass && o.GetInterfaces().Count() == 1).ToArray();
+
+            _hosts = new ServiceHost[types.Count()];
+
+            for (int i = 0; i < this._hosts.Count(); ++i)
+            {
+                this._hosts[i] = null;
+            }
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-            if (this._hosts[0] != null) _hosts[0].Close();
+            //http://localhost:9001/CalcService
+            string adrHttpBase = "http://localhost:8943/";
 
-            foreach (var serviceHost in this._hosts)
+            Assembly assembly = Assembly.Load("Zaneuski.Casino.WcfServiceLibrary");
+
+            Type[] types = assembly.GetTypes().Where(o => o.IsClass && o.GetInterfaces().Count() == 1).ToArray();
+
+            for (int i = 0; i < this._hosts.Count(); ++i)
             {
-                serviceHost.Open();
+                if (this._hosts[i] != null) this._hosts[i].Close();
+
+                string serviceName = types[i].ToString().Split('.').Last();
+                string strAdrHTTP = adrHttpBase + serviceName;
+
+                Uri adrbase = new Uri(strAdrHTTP);
+
+                this._hosts[i] = new ServiceHost(types[i], adrbase);
+
+                ServiceMetadataBehavior mBehave = new ServiceMetadataBehavior();
+                this._hosts[i].Description.Behaviors.Add(mBehave);
+
+                Type interfaceType = types[i].GetInterfaces().Last();
+
+                BasicHttpBinding httpb = new BasicHttpBinding();
+                this._hosts[i].AddServiceEndpoint(interfaceType, httpb, strAdrHTTP);
+                this._hosts[i].AddServiceEndpoint(typeof(IMetadataExchange),
+                MetadataExchangeBindings.CreateMexHttpBinding(), "mex");
+
+                this._hosts[i].Open();
             }
         }
 

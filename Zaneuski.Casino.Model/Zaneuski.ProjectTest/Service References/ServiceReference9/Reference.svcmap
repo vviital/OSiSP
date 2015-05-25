@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="13fd7fd7-0849-4ad4-a614-6489191aa922" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/AdministratorService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="194f2c5e-be2d-44f5-bbe3-92f863445a77" SourceId="1" SourceUrl="http://localhost:8943/AdministratorService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a3713247-d069-4c83-ab05-e5b439baf0a6" SourceId="1" SourceUrl="http://localhost:8943/AdministratorService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="43d0d9b8-d04b-477f-9ea8-0f06375f6748" SourceId="1" SourceUrl="http://localhost:8943/AdministratorService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="3625f69e-7dba-41fb-baca-1679c47a18df" SourceId="1" SourceUrl="http://localhost:8943/AdministratorService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="5314530c-d77e-4566-b87f-c72d2b98d74b" SourceId="1" SourceUrl="http://localhost:8943/AdministratorService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

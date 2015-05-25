@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="817a128d-bb06-46dd-9f30-d2cb713ac5c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/TournamentRestrictionService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3e0a4458-b340-44db-920f-04ba273724c0" SourceId="1" SourceUrl="http://localhost:8943/TournamentRestrictionService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0064a8a0-4d66-4519-a28b-f8541fb578d0" SourceId="1" SourceUrl="http://localhost:8943/TournamentRestrictionService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="cf600a99-9e4c-427c-91a5-0e7303548bd8" SourceId="1" SourceUrl="http://localhost:8943/TournamentRestrictionService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="35554af5-6eaa-43d6-8b49-811e6b2c0150" SourceId="1" SourceUrl="http://localhost:8943/TournamentRestrictionService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="dbd47ac5-f7c5-4f06-ae13-b537226ecf36" SourceId="1" SourceUrl="http://localhost:8943/TournamentRestrictionService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

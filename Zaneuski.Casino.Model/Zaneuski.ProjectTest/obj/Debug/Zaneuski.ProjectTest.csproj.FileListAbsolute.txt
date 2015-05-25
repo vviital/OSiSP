@@ -26,3 +26,7 @@ D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zan
 D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\EntityFramework.SqlServer.xml
 D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.dll
 D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\obj\Debug\Zaneuski.ProjectTest.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.WcfServiceLibrary.dll
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.WindowsService.exe
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.WcfServiceLibrary.pdb
+D:\Программирование универ\OSiSP\Zaneuski.Casino.Model\Zaneuski.ProjectTest\bin\Debug\Zaneuski.Casino.WindowsService.pdb

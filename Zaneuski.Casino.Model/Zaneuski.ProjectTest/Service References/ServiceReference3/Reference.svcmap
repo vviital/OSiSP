@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61bc1491-d05a-4706-bed6-d5dae3146b89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/GameTypeService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0fbb6686-fbe7-4bb1-b824-3fbee97e1126" SourceId="1" SourceUrl="http://localhost:8943/GameTypeService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f1f4c07c-42f8-4d92-8a4f-0db5da344bad" SourceId="1" SourceUrl="http://localhost:8943/GameTypeService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="36e174fc-62cd-4f72-aa2c-c31d26507d89" SourceId="1" SourceUrl="http://localhost:8943/GameTypeService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="656e0c53-9375-43a4-9698-2bba926cddcf" SourceId="1" SourceUrl="http://localhost:8943/GameTypeService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="82ba4db0-d48c-41f9-bef7-61e5a19e6e22" SourceId="1" SourceUrl="http://localhost:8943/GameTypeService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

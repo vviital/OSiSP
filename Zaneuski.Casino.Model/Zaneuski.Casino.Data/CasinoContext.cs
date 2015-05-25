@@ -19,7 +19,7 @@ namespace Zaneuski.Casino.Data
         public DbSet<GameType> GameTypes { get; set; }
 
         public CasinoContext()
-            :base("CasinoDataBase")
+            :base("connectionString")
         {
         }
 
