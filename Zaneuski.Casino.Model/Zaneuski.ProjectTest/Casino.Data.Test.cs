@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Net.Mime;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Zaneuski.Casino.Data;
-using Zaneuski.Casino.Data.Repository;
-using Zaneuski.Casino.Model;
-
-namespace Zaneuski.ProjectTest
+﻿namespace Zaneuski.ProjectTest
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Zaneuski.Casino.Data;
+    using Zaneuski.Casino.Data.Repository;
+    using Zaneuski.Casino.Model;
+
+    /// <summary>
+    /// Create Read Update Delete database tests
+    /// </summary>
     [TestClass]
     public class CRUDtests
     {
+        /// <summary>
+        /// Makes the base test.
+        /// </summary>
         [TestMethod]
         public void MakeBaseTest()
         {
@@ -114,7 +116,10 @@ namespace Zaneuski.ProjectTest
             }
             Assert.AreEqual(true, true);
         }
-        
+
+        /// <summary>
+        /// Makes the single add delete test.
+        /// </summary>
         [TestMethod]
         public void MakeSingleAddDeleteTest()
         {
@@ -138,6 +143,9 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
+        /// <summary>
+        /// Makes the update test.
+        /// </summary>
         [TestMethod]
         public void MakeUpdateTest()
         {
@@ -161,7 +169,9 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
-        // Ask question
+        /// <summary>
+        /// Makes the multiple delete test.
+        /// </summary>
         [TestMethod]
         public void MakeMultipleDeleteTest()
         {
@@ -212,6 +222,9 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
+        /// <summary>
+        /// Makes the get by identifier test.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void MakeGetByIdTest()
@@ -226,6 +239,9 @@ namespace Zaneuski.ProjectTest
             }
         }
 
+        /// <summary>
+        /// Makes the get all test.
+        /// </summary>
         [TestMethod]
         public void MakeGetAllTest()
         {
@@ -237,6 +253,9 @@ namespace Zaneuski.ProjectTest
             }
         }
 
+        /// <summary>
+        /// Makes the get many test.
+        /// </summary>
         [TestMethod]
         public void MakeGetManyTest()
         {
@@ -261,7 +280,9 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
-        // Questions - two things which should be the same work differently
+        /// <summary>
+        /// Makes the get test.
+        /// </summary>
         [TestMethod]
         public void MakeGetTest()
         {
@@ -284,6 +305,9 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
+        /// <summary>
+        /// Makes the count test.
+        /// </summary>
         [TestMethod]
         public void MakeCountTest()
         {
@@ -302,6 +326,10 @@ namespace Zaneuski.ProjectTest
             Assert.AreEqual(true, good);
         }
 
+        /// <summary>
+        /// Makes the is exist test.
+        /// </summary>
+        /// <exception cref="System.Exception"></exception>
         [TestMethod]
         public void MakeIsExistTest()
         {
