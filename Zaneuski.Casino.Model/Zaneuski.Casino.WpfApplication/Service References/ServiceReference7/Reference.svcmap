@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="64a094ea-2c75-49b9-84b3-e68435df9535" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/RoundService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="3111adcd-248f-426d-8828-52a5b27bba4f" SourceId="1" SourceUrl="http://localhost:8943/RoundService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="49ea4dec-46c9-42a8-915f-a57f912e737f" SourceId="1" SourceUrl="http://localhost:8943/RoundService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="2d9ff7b8-d22d-4b4c-b798-948b0e93a0af" SourceId="1" SourceUrl="http://localhost:8943/RoundService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="f37a8d94-6786-4067-b87d-a24f9fc8ed44" SourceId="1" SourceUrl="http://localhost:8943/RoundService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="a43a9ea3-37a9-41ee-bd60-64687a87334b" SourceId="1" SourceUrl="http://localhost:8943/RoundService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1e23e01c-e392-4b78-82d7-c6adf54429e5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/TournamentService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c95cc60c-6531-40a9-a9fc-9f42795795dc" SourceId="1" SourceUrl="http://localhost:8943/TournamentService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="cd97f36e-5b87-4b9e-94f4-e7a06f79bd7d" SourceId="1" SourceUrl="http://localhost:8943/TournamentService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="72879414-91d2-4906-9c61-624ccbfdc6bd" SourceId="1" SourceUrl="http://localhost:8943/TournamentService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="47a1baa1-2261-4b47-956f-cc16e09f66d8" SourceId="1" SourceUrl="http://localhost:8943/TournamentService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="b4338a52-932b-4ed8-a3b5-7c2b4c66c90f" SourceId="1" SourceUrl="http://localhost:8943/TournamentService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

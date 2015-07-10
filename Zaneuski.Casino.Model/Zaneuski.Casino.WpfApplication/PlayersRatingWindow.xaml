@@ -1,0 +1,32 @@
+﻿<Window x:Class="Zaneuski.Casino.WpfApplication.PlayersRatingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Players" Height="600" Width="800">
+    <Grid>
+        <Label Content="Players Rating" HorizontalAlignment="Left" Margin="51,22,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="Rating" HorizontalAlignment="Left" Margin="51,53,0,0" VerticalAlignment="Top" Height="475" Width="700" SelectedIndex="0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width ="140" Header="Player login" Binding="{Binding PlayerLogin}">
+                    
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width ="140" Header="Player Name" Binding="{Binding FirstName}">
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width ="140" Header="Player Surname" Binding="{Binding Surname}">
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width ="140" Header="Player Gain" Binding="{Binding TotalGain}">
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width ="140" Header="Number of Rounds" Binding="{Binding NumberOfRound}">
+
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

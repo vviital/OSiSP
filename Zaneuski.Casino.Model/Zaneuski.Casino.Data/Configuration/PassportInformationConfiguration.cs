@@ -21,7 +21,7 @@
 
             Property(o => o.ExpirationDate).IsRequired();
 
-            HasRequired(o => o.Player).WithRequiredPrincipal(s => s.Passport).WillCascadeOnDelete(false);
+            HasRequired(o => o.Player).WithOptional(s => s.Passport).WillCascadeOnDelete(false);
         }
     }
 }

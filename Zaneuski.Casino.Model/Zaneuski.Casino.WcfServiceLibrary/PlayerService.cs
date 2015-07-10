@@ -1,4 +1,6 @@
-﻿namespace Zaneuski.Casino.WcfServiceLibrary
+﻿using System.Linq;
+
+namespace Zaneuski.Casino.WcfServiceLibrary
 {
     using System.Collections.Generic;
     using Zaneuski.Casino.Data;

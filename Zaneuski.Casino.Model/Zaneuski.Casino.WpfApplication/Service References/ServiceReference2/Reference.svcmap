@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5561c964-9283-41d6-a84f-4806cc271def" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8943/CountryService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="2f6eb0ad-4eea-4cfd-a082-738321bc98ff" SourceId="1" SourceUrl="http://localhost:8943/CountryService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ba5add6b-f61f-4af5-a372-ea752d23b21c" SourceId="1" SourceUrl="http://localhost:8943/CountryService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="59619c6f-ec61-4b06-a5d9-259bc374aba4" SourceId="1" SourceUrl="http://localhost:8943/CountryService/mex" />
+    <MetadataFile FileName="Zaneuski.Casino.WcfServiceLibrary.xsd" MetadataType="Schema" ID="b8047b40-8209-4858-8145-2042379d99be" SourceId="1" SourceUrl="http://localhost:8943/CountryService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="ae11550f-5d41-463d-8a4c-29f7959d64dc" SourceId="1" SourceUrl="http://localhost:8943/CountryService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
